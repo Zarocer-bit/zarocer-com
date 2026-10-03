@@ -1,6 +1,6 @@
 # Zarocer — entrega de la primera versión
 
-**Estado: construida y revisada localmente; publicación pendiente de autorización por rechazo automático.**
+**Estado: sitio construido y revisado; repositorio publicado en GitHub. Vercel espera la verificación de sesión de GitHub por el titular.**
 
 Vista local: http://127.0.0.1:43170/es/ · inglés: http://127.0.0.1:43170/
 
@@ -20,13 +20,13 @@ Vista local: http://127.0.0.1:43170/es/ · inglés: http://127.0.0.1:43170/
 14. **SEO.** Enfoque en creador y títulos originales. Metadatos únicos, canonical, hreflang, robots y sitemap con 32 URLs. Borradores legales y kits de juegos vacíos no indexados. Sin duplicar el catálogo de los portales.
 15. **Structured data.** Person con nombre completo y alternateName Zarocer, WebSite, WebPage, ProfilePage en About y BreadcrumbList en interiores. JSON parseado en todas las páginas. VideoGame pendiente de evidencia jugable y datos verificados; Article pendiente de noticias reales. Sin ratings, premios ni cifras inventadas.
 16. **Open Graph.** Home, creador, índice de juegos y diez imágenes de título individual: 13 tarjetas PNG de 1200×630. Título, descripción, URL e imagen por página; X/Twitter card. Son identidad y tipografía, no capturas de juego.
-17. **Repositorio.** Git local independiente en `zarocer-com`. GitHub preparado para `Zarocer-bit/zarocer-com`; el remoto aún no se creó porque la revisión automática bloqueó transmitir el nombre completo en el formulario.
-18. **Commit.** La implementación y los informes se guardan en un commit local. Su identificador se incluye en la respuesta de entrega. No se realizó push.
+17. **Repositorio.** Git local independiente en `zarocer-com`. Repositorio público creado y código subido: https://github.com/Zarocer-bit/zarocer-com. La publicación del nombre completo fue autorizada expresamente por el usuario.
+18. **Commit.** La implementación y los informes se guardan en un commit local. Su identificador se incluye en la respuesta de entrega. Push realizado a la rama `main`.
 19. **Vercel.** Sesión de navegador disponible; CLI sin credenciales. Configuración `vercel.json` preparada para un proyecto independiente, salida estática y cabeceras de seguridad. No se creó ni desplegó el proyecto remoto todavía.
 20. **Dominio.** `zarocer.com` es el dominio de los canonical y compartir. DNS sin cambios. Conectar únicamente después de crear Vercel y verificar preview, como exige el encargo.
 21. **URLs públicas.** No hay una nueva URL pública publicada. Las direcciones anteriores son vistas locales en este equipo. Los portales existentes se enlazan como proyectos secundarios, sin modificaciones.
 22. **QA realizado.** Instalación reproducible, lint, TypeScript, build y auditoría estática aprobados. 56 páginas, 1.276 enlaces/recursos internos comprobados, 32 URLs de sitemap y cero fallos de esa auditoría. Consola de navegador sin errores/advertencias capturados. Menú, Escape con retorno de foco, cambio ES/EN, navegación juego/prensa y copia de biografía probados. ZIP y SVG existen; archivo ZIP creado y contenido comprobado en preparación. Falta probar HTTPS, cabeceras y producción tras desplegar. No se afirma un Lighthouse ni una certificación WCAG que no se hayan realizado.
-23. **Acción humana pendiente.** Autorizar expresamente la publicación de «Felipe Antonio Toledo Alcalde» en GitHub y en la web/Vercel, debido al rechazo automático. Después se puede crear remoto, push, Vercel, verificar preview y preparar dominio. Contacto requiere definir canales reales; juegos requieren confirmar estados, plataformas y materiales. Borradores legales requieren revisión del creador antes de sustituirse por avisos definitivos.
+23. **Acción humana pendiente.** La publicación del nombre completo ya fue autorizada. GitHub exige verificar la sesión por correo para añadir acceso de Vercel al nuevo repositorio. Abrir https://github.com/settings/installations/162284495, verificar la sesión y habilitar únicamente zarocer-com, conservando intacto el acceso existente. Después se podrá importar en Vercel, verificar preview y preparar el dominio. Contacto requiere definir canales reales; juegos requieren confirmar estados, plataformas y materiales. Borradores legales requieren revisión del creador antes de sustituirse por avisos definitivos.
 
 ## Identidad visual original
 

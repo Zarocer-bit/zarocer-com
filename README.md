@@ -18,7 +18,7 @@ When verified facts arrive, update the project data and page generator. Enable `
 
 ## Pending publication
 
-GitHub browser session is available as Zarocer-bit; Vercel browser session is available. Vercel CLI has no credentials. Automatic approval review blocked transmitting the full name in the GitHub repository form. Publication requires the user's approval of that specific disclosure; do not work around the rejection. No remote repo, Vercel project, or DNS change was performed in this preparation turn. Create `zarocer-com` separately, commit/push, import it into Vercel, verify preview, then connect zarocer.com. Verify HTTPS and production after DNS resolves. Never change the other portals.
+GitHub browser session is available as Zarocer-bit; Vercel browser session is available. Vercel CLI has no credentials. The user explicitly approved publication of the full name. Public repo created and pushed: https://github.com/Zarocer-bit/zarocer-com. GitHub requires the account holder to verify their session by email before adding Vercel access to the new repository. Direct browser folder upload also needs file access permission, which was not expanded. No Vercel project or DNS change has been performed. After session verification, enable only the new repository, import it into Vercel, verify preview, then connect zarocer.com. Verify HTTPS and production after DNS resolves. Never change the other portals.
 
 ## Contact activation
 
