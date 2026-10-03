@@ -1,0 +1,21 @@
+import {createRequire} from 'node:module';
+import {writeFile,readFile} from 'node:fs/promises';
+const require=createRequire(import.meta.url);
+const bundled=process.env.ZAROCER_NODE_PACKAGES;
+if(!bundled)throw new Error('Set ZAROCER_NODE_PACKAGES to the bundled package directory for asset preparation.');
+const sharp=require(`${bundled}/sharp`);
+const JSZip=require(`${bundled}/jszip`);
+const hero=process.env.ZAROCER_HERO_SOURCE;
+if(!hero)throw new Error('Set ZAROCER_HERO_SOURCE to the approved generated brand artwork.');
+await sharp(hero).resize({width:1600,withoutEnlargement:true}).webp({quality:82}).toFile('public/assets/signal.webp');
+const mark='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="4" fill="#111211"/><path d="M17 18h32L18 46h31" fill="none" stroke="#f4b34c" stroke-width="7" stroke-linejoin="miter"/></svg>';
+const wordmark='<svg xmlns="http://www.w3.org/2000/svg" width="900" height="200" viewBox="0 0 900 200"><rect width="900" height="200" fill="#111211"/><text x="38" y="144" fill="#f0eee7" font-family="Arial,sans-serif" font-size="127" font-weight="700" letter-spacing="-8">ZAROCER<tspan fill="#f4b34c">.</tspan></text></svg>';
+await writeFile('public/assets/favicon.svg',mark);await writeFile('public/assets/zarocer-mark.svg',mark);await writeFile('public/assets/zarocer-wordmark.svg',wordmark);
+const titles={'home':'ZAROCER.','creator':'ZAROCER.','games':'ORIGINAL PROJECTS.','nucleo-neon':'NÚCLEO NEÓN','rivet-circuit':'RIVET CIRCUIT','chipbots':'CHIPBOTS','powerwash-dungeon':'POWERWASH DUNGEON','shadow-market':'SHADOW MARKET','evo-arena':'EVO ARENA','infinite-realities-void-architect':'INFINITE REALITIES','wolf':'WOLF','aster-vaults':'ASTER VAULTS','cosmic-restorations':'COSMIC RESTORATIONS'};
+for(const [key,title] of Object.entries(titles)){const size=title.length>18?62:title.length>12?76:112;const sub=key==='home'||key==='creator'?'Felipe Antonio Toledo Alcalde':key==='games'?'Games by Zarocer':key==='infinite-realities-void-architect'?'Void Architect · An original project by Zarocer':'An original project by Zarocer';const svg=`<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630"><rect width="1200" height="630" fill="#111211"/><path d="M975 80h160L975 550h160" fill="none" stroke="#f4b34c" stroke-width="3"/><text x="72" y="90" fill="#f4b34c" font-family="Arial" font-size="16" letter-spacing="4">INDEPENDENT GAME DEVELOPER</text><text x="65" y="335" fill="#f0eee7" font-family="Arial" font-size="${size}" font-weight="700" letter-spacing="-4">${title}</text><text x="72" y="395" fill="#b9c1ad" font-family="Arial" font-size="24">${sub}</text><path d="M72 520h780" stroke="#434a38"/><text x="72" y="562" fill="#b9c1ad" font-family="Arial" font-size="18">zarocer.com</text></svg>`;await sharp(Buffer.from(svg)).png().toFile(`public/assets/og-${key}.png`);}
+const zip=new JSZip();for(const file of ['zarocer-mark.svg','zarocer-wordmark.svg','og-creator.png'])zip.file(file,await readFile(`public/assets/${file}`));
+zip.file('bio-en.txt','Zarocer is Felipe Antonio Toledo Alcalde. He is an independent game developer building web games, modern takes on classics, original projects, systems, and interactive experiments.\nOfficial website: https://zarocer.com\nPublic contact: not available yet.\nGame facts and assets: pending verification.\n');
+zip.file('bio-es.txt','Zarocer es Felipe Antonio Toledo Alcalde, desarrollador independiente de videojuegos. Construye juegos web, clásicos modernizados, proyectos originales, sistemas y experimentos interactivos.\nWeb oficial: https://zarocer.com\nContacto público: aún no disponible.\nMateriales de juegos: pendientes de verificación.\n');
+zip.file('usage.txt','Website identity assets for identifying Zarocer in editorial coverage. These abstract and typographic visuals do not depict gameplay. Game assets are not included. Final usage terms require creator review.\n');
+await writeFile('public/assets/zarocer-press-kit.zip',await zip.generateAsync({type:'nodebuffer',compression:'DEFLATE'}));
+console.log('Brand artwork, 13 sharing cards, favicon, wordmark and bilingual press ZIP prepared.');

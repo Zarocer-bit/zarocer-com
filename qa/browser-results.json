@@ -1,0 +1,11 @@
+{
+  "homeViewports": [{"width":320,"height":740},{"width":360,"height":800},{"width":375,"height":812},{"width":390,"height":844},{"width":414,"height":896},{"width":430,"height":932},{"width":1366,"height":768},{"width":1440,"height":900},{"width":1920,"height":1080}],
+  "homeHorizontalOverflow": false,
+  "routesAuditedAt320": 36,
+  "routeHorizontalOverflow": false,
+  "missingH1": false,
+  "consoleErrorsAndWarningsCaptured": [],
+  "verifiedInteractions": ["mobile menu open", "Escape closes menu and restores button focus", "EN to ES navigation", "project to game press to creator press", "biography clipboard success", "keyboard focus to home link"],
+  "visualCapturesReviewed": ["home desktop", "home 390 mobile", "games desktop", "games 320 mobile", "press 390 mobile"],
+  "limitations": ["Not yet deployed", "No production Core Web Vitals measurements", "Reduced motion rules inspected; OS preference not changed", "No claim of Lighthouse or full WCAG audit"]
+}

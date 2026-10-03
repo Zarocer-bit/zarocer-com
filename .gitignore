@@ -1,0 +1,7 @@
+node_modules/
+.pnpm-store/
+dist/
+.vercel/
+qa/screenshots/
+.env*
+!.env.example
