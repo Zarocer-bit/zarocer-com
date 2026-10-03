@@ -8,7 +8,7 @@ TypeScript static page generator, semantic HTML, custom CSS, small progressive J
 
 ## Local use
 
-Node 24+ and pnpm. `pnpm install`, `pnpm typecheck`, `pnpm lint`, `pnpm build`, `pnpm qa`, `pnpm dev`. Local preview: http://127.0.0.1:43170. Vercel: use Other framework, build `pnpm build`, output `dist`, Node 24. `vercel.json` includes headers and route handling. Built output is disposable. Committed assets make regular builds independent of AI tools.
+Node 24+ and pnpm. `pnpm install`, `pnpm typecheck`, `pnpm lint`, `pnpm build`, `pnpm qa`, `pnpm dev`. Local preview: http://127.0.0.1:43170. Vercel: use Other framework, build `node --experimental-strip-types scripts/build.ts`, output `dist`, Node 24; remote installation is skipped because the generator uses only Node built-ins. `vercel.json` includes headers and route handling. Built output is disposable. Committed assets make regular builds independent of AI tools.
 
 ## Content evidence
 
